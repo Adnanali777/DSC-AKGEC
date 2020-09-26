@@ -17,7 +17,7 @@ class _EventsState extends State<Events> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            expandedHeight: 200,
+            expandedHeight: 210,
             backgroundColor: Colors.white,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset('assets/Events-appbar.png',fit: BoxFit.cover,),
@@ -32,9 +32,10 @@ class _EventsState extends State<Events> {
       itemExtent: 350.0,
       delegate: SliverChildListDelegate(
         [
-          event1,
-          event2,
-          event3,
+          FlatButton(child: event1,onPressed: (){
+          },),
+          FlatButton(child:event2,onPressed: (){},),
+          FlatButton(child:event3,onPressed: (){},),
         ],
       ),
       ),
