@@ -74,7 +74,5 @@ class _HomeState extends State<Home> {
   }
 }
 
-Widget blog_card(image,text1,text2,text3){
-  return blog_card_template(image:image,text1:text1,text2:text2,text3:text3);
-}
+
 
