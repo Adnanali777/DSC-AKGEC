@@ -35,7 +35,7 @@ class _EventDetailsState extends State<EventDetails> {
                 [
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(55),topRight: Radius.circular(55)),
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(38),topRight: Radius.circular(38)),
                       color: Colors.white,
                       border: Border.all(width: 1.5,color: Colors.grey[350],style: BorderStyle.solid),
 
@@ -129,6 +129,7 @@ class _EventDetailsState extends State<EventDetails> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
+        onPressed: (){},
         backgroundColor: Colors.lightBlueAccent,
         label: Container(
             padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
