@@ -1,11 +1,14 @@
 import 'package:dsc/shared/heart.dart';
+import 'package:dsc/shared/post-card.dart';
 import 'package:flutter/material.dart';
+import 'package:dsc/screens/home.dart';
 class Details extends StatefulWidget {
   String image;
+  String userimg;
   String text1;
   String text2;
   String text3;
-  Details({this.image,this.text1,this.text2,this.text3});
+  Details({this.image,this.text1,this.text2,this.text3,this.userimg});
 
   @override
   _DetailsState createState() => _DetailsState();
@@ -45,7 +48,19 @@ class _DetailsState extends State<Details> {
                           color: Colors.grey[800]
                       )
                   ),
-                trailing: Heart(),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20),
+                child: Row(
+                  children: [
+                    SizedBox(width: 20,),
+                    Image.asset(widget.userimg,height: 30,width: 30,fit: BoxFit.cover,),
+                    SizedBox(width: 25,),
+                    Text(widget.text2,style: TextStyle(fontSize: 13,color: Colors.grey[800]),),
+                    SizedBox(width: 20,),
+                    Heart(),
+                  ],
+                ),
               ),
               Padding(
                   padding: EdgeInsets.all(18),

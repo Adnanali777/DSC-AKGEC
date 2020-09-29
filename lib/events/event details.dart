@@ -35,7 +35,7 @@ class _EventDetailsState extends State<EventDetails> {
                 [
                   Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(38),topRight: Radius.circular(38)),
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
                       color: Colors.white,
                       border: Border.all(width: 1.5,color: Colors.grey[350],style: BorderStyle.solid),
                     ),

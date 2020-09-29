@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'file:///D:/apps/dsc/lib/shared/blogs.dart';
+import 'package:dsc/screens/home.dart';
 class blog_card_template extends StatelessWidget {
   String image;
+  String userimg;
   String text1;
   String text2;
   String text3;
-  blog_card_template({this.image,this.text1,this.text2,this.text3});
+  blog_card_template({this.image,this.text1,this.text2,this.text3,this.userimg});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class blog_card_template extends StatelessWidget {
             children: [
               FlatButton(
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Details(image:image,text1:text1,text2:text2,text3: text3,)));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Details(image:image,text1:text1,text2:text2,text3: text3,userimg: userimg,)));
                 },
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.30,

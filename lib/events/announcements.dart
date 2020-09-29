@@ -41,7 +41,7 @@ class _AnnouncementsState extends State<Announcements> {
                     children: [
                       Text('DomainX',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,fontFamily: 'Nanum'),),
                       SizedBox(height: 20,),
-                      Text('Team DSC AKGEC extends its heartiest congratulations to the winners !',style: TextStyle(fontSize: 15,fontFamily: 'Nanum'),),
+                      Text('DSC AKGEC extends its heartiest congratulations to the winners !',style: TextStyle(fontSize: 15,fontFamily: 'Nanum'),),
                       SizedBox(height: 25,),
                     Table(
                       columnWidths: {
@@ -69,7 +69,8 @@ class _AnnouncementsState extends State<Announcements> {
                       ],
                     ),
                       Table_details('Adnan Ali', 'IT', '1913113'),
-                      Table_details('Aditya Pratap Singh', 'CS/IT', '191211'),
+                      Table_details('Aditya Pratap Singh', 'CS/IT', '1912112'),
+                      Table_details('Naman Mishra', 'ME', '1902701'),
                     ],
                   ),
                 ),
@@ -81,6 +82,8 @@ class _AnnouncementsState extends State<Announcements> {
     );
   }
 }
+
+
 
 Widget Table_details(String name, String branch,String student_no){
     return Table(
