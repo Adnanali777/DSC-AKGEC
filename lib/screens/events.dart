@@ -1,3 +1,4 @@
+import 'package:dsc/events/announcements.dart';
 import 'package:dsc/events/event%20details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -32,22 +33,23 @@ class _EventsState extends State<Events> {
                 centerTitle: true,
             ),
             ),
-        SliverFixedExtentList(
-
-        itemExtent: 350.0,
-        delegate: SliverChildListDelegate(
-          [
-            event1,
-            event2,
-            event3,
-          ],
-        ),
-        ),
+            SliverFixedExtentList(
+            itemExtent: 350.0,
+            delegate: SliverChildListDelegate(
+              [
+                event1,
+                event2,
+                event3,
+              ],
+            ),
+            ),
         ],
     ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => Announcements()));
+        },
         backgroundColor: Colors.grey[600],
         child: IconButton(
         icon: Icon(Foundation.megaphone,color: Colors.white,),

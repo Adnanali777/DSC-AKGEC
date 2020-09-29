@@ -38,8 +38,6 @@ class _EventDetailsState extends State<EventDetails> {
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(38),topRight: Radius.circular(38)),
                       color: Colors.white,
                       border: Border.all(width: 1.5,color: Colors.grey[350],style: BorderStyle.solid),
-
-
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,

@@ -60,3 +60,7 @@ flutter:
      fonts:
        - asset: fonts/DancingScript-Medium.ttf
 
+   - family: PoiretOne
+     fonts:
+       - asset: fonts/PoiretOne-Regular.ttf
+

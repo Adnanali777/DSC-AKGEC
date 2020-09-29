@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:dsc/pages/home.dart';
-import 'package:dsc/pages/events.dart';
-import 'package:dsc/pages/projects.dart';
-import 'package:dsc/pages/team.dart';
+import 'package:dsc/screens/home.dart';
+import 'package:dsc/screens/events.dart';
+import 'package:dsc/screens/projects.dart';
+import 'package:dsc/screens/team.dart';
 
 class mynavbar extends StatefulWidget {
   @override

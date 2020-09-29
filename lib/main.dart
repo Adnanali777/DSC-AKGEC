@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'pages/home.dart';
+import 'screens/home.dart';
 import 'dart:async';
-import 'package:dsc/pages/navbar.dart';
+import 'package:dsc/screens/navbar.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
