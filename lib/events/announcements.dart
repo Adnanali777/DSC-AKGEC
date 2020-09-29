@@ -43,43 +43,33 @@ class _AnnouncementsState extends State<Announcements> {
                       SizedBox(height: 20,),
                       Text('Team DSC AKGEC extends its heartiest congratulations to the winners !',style: TextStyle(fontSize: 15,fontFamily: 'Nanum'),),
                       SizedBox(height: 25,),
-                      Table(
-                        columnWidths: {
-                          0:FractionColumnWidth(0.5),
-                          1:FractionColumnWidth(0.2),
-                          2:FractionColumnWidth(0.5),
-                        },
-                        children: [
-                          TableRow(children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 7),
-                              child: Text('Name',style: TextStyle(fontSize: 17,fontFamily: 'Nanum',color: Colors.black),),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 7),
-                              child: Text('Branch',style: TextStyle(fontSize: 17,fontFamily: 'Nanum',color: Colors.black),),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 7),
-                              child: Text('Student No',style: TextStyle(fontSize: 17,fontFamily: 'Nanum',color: Colors.black),),
-                            ),
-                          ]),
-                          TableRow(children:[
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 4.5),
-                              child: Text('Adnan Ali',style: TextStyle(fontSize: 16,fontFamily: 'Nanum',color: Colors.grey[600]),),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 4.5),
-                              child: Text('IT',style: TextStyle(fontSize: 16,fontFamily: 'Nanum',color: Colors.grey[600]),),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 4.5),
-                              child: Text('1913113',style: TextStyle(fontSize: 16,fontFamily: 'Nanum',color: Colors.grey[600]),),
-                            ),
-                          ]),
-                        ],
-                      ),
+                    Table(
+                      columnWidths: {
+                        0:FractionColumnWidth(0.5),
+                        1:FractionColumnWidth(0.2),
+                        2:FractionColumnWidth(0.5),
+                      },
+                      children: [
+                        TableRow(children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 7),
+                            child: Text('Name',style: TextStyle(fontSize: 17,fontFamily: 'Nanum',color: Colors.black),),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 7),
+                            child: Text('Branch',style: TextStyle(fontSize: 17,fontFamily: 'Nanum',color: Colors.black),),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 7),
+                            child: Text('Student No',style: TextStyle(fontSize: 17,fontFamily: 'Nanum',color: Colors.black),),
+                          ),
+                        ]),
+
+
+                      ],
+                    ),
+                      Table_details('Adnan Ali', 'IT', '1913113'),
+                      Table_details('Aditya Pratap Singh', 'CS/IT', '191211'),
                     ],
                   ),
                 ),
@@ -92,6 +82,28 @@ class _AnnouncementsState extends State<Announcements> {
   }
 }
 
-Widget Table_details(){
-
+Widget Table_details(String name, String branch,String student_no){
+    return Table(
+      columnWidths: {
+        0:FractionColumnWidth(0.5),
+        1:FractionColumnWidth(0.2),
+        2:FractionColumnWidth(0.5),
+      },
+      children: [
+        TableRow(children:[
+          Padding(
+            padding: const EdgeInsets.only(bottom: 4.5),
+            child: Text(name,style: TextStyle(fontSize: 16,fontFamily: 'Nanum',color: Colors.grey[600]),),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 4.5),
+            child: Text(branch,style: TextStyle(fontSize: 16,fontFamily: 'Nanum',color: Colors.grey[600]),),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 4.5),
+            child: Text(student_no,style: TextStyle(fontSize: 16,fontFamily: 'Nanum',color: Colors.grey[600]),),
+          ),
+        ]),
+      ],
+    );
 }
