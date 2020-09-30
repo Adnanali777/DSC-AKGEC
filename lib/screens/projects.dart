@@ -20,7 +20,7 @@ class _ProjectsState extends State<Projects> {
       body: Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/bg-2.jpg'),fit: BoxFit.fill),
+          color: Colors.white,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,7 +28,7 @@ class _ProjectsState extends State<Projects> {
             Container(
               margin: EdgeInsets.only(top: 30),
               padding: EdgeInsets.all(15),
-              child: Text('Categories',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.white),),
+              child: Text('Categories',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.black,fontFamily: 'PoiretOne',letterSpacing: 1.2),),
             ),
             Column(
               children: [
@@ -69,18 +69,21 @@ class categories_cards extends StatelessWidget {
       height: MediaQuery.of(context).size.height * 0.35,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
+        boxShadow: [BoxShadow(
+          color: Colors.grey,
+          blurRadius: 5.0,
+        ),],
         color: Colors.white,
       ),
       child: Column(
         children: [
           Expanded(
-            flex:4,
+            flex:6,
             child: GestureDetector(
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => route));
                 },
-                child: Image.asset(image,fit: BoxFit.fill,
-                )
+                child: Image.asset(image,fit: BoxFit.fill,)
             ),
           ),
           Expanded(
@@ -88,7 +91,7 @@ class categories_cards extends StatelessWidget {
             child: Container(
 
               margin: EdgeInsets.only(top: 10),
-              child: Text(text,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black),),
+              child: Text(text,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black,),),
             ),
           ),
         ],
