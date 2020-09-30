@@ -7,13 +7,17 @@ class ml extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body:CustomScrollView(
+        physics: ClampingScrollPhysics(),
         slivers: [
           SliverAppBar(
           expandedHeight: 200,
           backgroundColor: Colors.white,
-          flexibleSpace: FlexibleSpaceBar(
-          background: Image.asset('assets/ml-projects.png',fit: BoxFit.cover,),
+          flexibleSpace: Container(
+            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.015),
+            child: FlexibleSpaceBar(
+            background: Image.asset('assets/ml-projects.png',fit: BoxFit.cover,height: double.infinity,),
         ),
+          ),
         ),
         SliverList(
             delegate: SliverChildListDelegate(

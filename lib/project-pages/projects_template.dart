@@ -17,18 +17,19 @@ class _template_designState extends State<template_design> {
     return SafeArea( 
       child: Container(
         padding: EdgeInsets.all(10),
-        margin: EdgeInsets.symmetric(horizontal: 12,vertical: 10),
+        margin: EdgeInsets.symmetric(horizontal: 12,),
         decoration: BoxDecoration(
           border: Border.all(width: 1,color: Colors.grey[350],style: BorderStyle.solid),
           color: Colors.white,
           borderRadius: BorderRadius.circular(15),
         ),
         child: ListTile(
+          contentPadding: EdgeInsets.zero,
           leading: Padding(
-            padding: const EdgeInsets.only(right:7.0),
+            padding: const EdgeInsets.only(right:7.0,left: 7),
             child: CircleAvatar(
               backgroundImage: AssetImage(widget.img),
-              radius: 25,
+              radius: 26,
             ),
           ),
           title: Text(widget.title,style: TextStyle(fontSize: 18,letterSpacing: 1.1,height: 1.35),),
@@ -45,7 +46,7 @@ class _template_designState extends State<template_design> {
               throw 'Could not launch $url';
               }
             },
-            icon: Icon(AntDesign.github,size: 27,),
+            icon: Icon(AntDesign.github,size: 27,color: Colors.grey[700],),
           ),
         ),
       ),
