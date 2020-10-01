@@ -10,9 +10,11 @@ class Events extends StatefulWidget {
 }
 
 class _EventsState extends State<Events> {
-  Event_template event1 = Event_template(image: 'assets/ui-events.png',title: 'DesignTO',category: 'UI Design',date: '13 October 2020',time:'1:00 PM - 3:00 PM',place:'CS/IT Block , Second Floor',place_detail:'AKGEC - Ghaziabad',about:lipsum.createText(numParagraphs: 1,numSentences: 6));
-  Event_template event2 = Event_template(image: 'assets/ai-workshop.png',title: 'ODSC Workshop',category: 'Artificial Intelligence',date: '24 October 2020',time: '4:00 PM - 6:00 PM',place: 'Seminar Hall , Admin Block',place_detail: 'JSS Academy',about: lipsum.createText(numParagraphs: 1,numSentences: 7),);
-  Event_template event3 = Event_template(image: 'assets/webd-event.png',title: 'WebMorph 2.0',category: 'Web Development',date: '2 November 2020',time: '12:00 PM - 2:00 PM',place: 'Banquet Hall Sun View Int',place_detail: 'Karol Bagh , Delhi',about:lipsum.createText(numParagraphs: 1,numSentences: 5) );
+  List<Event_template> events = [
+  Event_template(image: 'assets/ui-events.png',title: 'DesignTO',category: 'UI Design',date: '13 October 2020',time:'1:00 PM - 3:00 PM',place:'CS/IT Block , Second Floor',place_detail:'AKGEC - Ghaziabad',about:lipsum.createText(numParagraphs: 1,numSentences: 6) ),
+  Event_template(image: 'assets/ai-workshop.png',title: 'ODSC Workshop',category: 'Artificial Intelligence',date: '24 October 2020',time: '4:00 PM - 6:00 PM',place: 'Seminar Hall , Admin Block',place_detail: 'JSS Academy',about: lipsum.createText(numParagraphs: 1,numSentences: 7),),
+  Event_template(image: 'assets/webd-event.png',title: 'WebMorph 2.0',category: 'Web Development',date: '2 November 2020',time: '12:00 PM - 2:00 PM',place: 'Banquet Hall Sun View Int',place_detail: 'Karol Bagh , Delhi',about:lipsum.createText(numParagraphs: 1,numSentences: 5) ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,9 +39,9 @@ class _EventsState extends State<Events> {
             itemExtent: 350.0,
             delegate: SliverChildListDelegate(
               [
-                event1,
-                event2,
-                event3,
+                events[0],
+                events[1],
+                events[2],
               ],
             ),
             ),
