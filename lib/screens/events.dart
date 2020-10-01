@@ -3,6 +3,7 @@ import 'package:dsc/events/event%20details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:lipsum/lipsum.dart' as lipsum;
+import 'package:ripple_effect/ripple_effect.dart';
 
 class Events extends StatefulWidget {
   @override
@@ -10,6 +11,8 @@ class Events extends StatefulWidget {
 }
 
 class _EventsState extends State<Events> {
+   final pageKey = RipplePage.createGlobalKey();
+   final effectKey = RippleEffect.createGlobalKey();
   List<Event_template> events = [
   Event_template(image: 'assets/ui-events.png',title: 'DesignTO',category: 'UI Design',date: '13 October 2020',time:'1:00 PM - 3:00 PM',place:'CS/IT Block , Second Floor',place_detail:'AKGEC - Ghaziabad',about:lipsum.createText(numParagraphs: 1,numSentences: 6) ),
   Event_template(image: 'assets/ai-workshop.png',title: 'ODSC Workshop',category: 'Artificial Intelligence',date: '24 October 2020',time: '4:00 PM - 6:00 PM',place: 'Seminar Hall , Admin Block',place_detail: 'JSS Academy',about: lipsum.createText(numParagraphs: 1,numSentences: 7),),
@@ -17,47 +20,60 @@ class _EventsState extends State<Events> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
-        margin: EdgeInsets.only(top: 40),
-        child: CustomScrollView(
-          slivers: [
-            SliverAppBar(
-              expandedHeight: 180,
-              backgroundColor: Colors.white,
-              flexibleSpace: FlexibleSpaceBar(
-                background: Image.asset('assets/Events-appbar.png',fit: BoxFit.cover,),
-                title:  Container(
-                  margin: EdgeInsets.only(bottom: 15),
-                  child: Text('Events',style: TextStyle(fontFamily: 'Dancing',color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold,letterSpacing: 1.5),),
-                ),
-                centerTitle: true,
-            ),
-            ),
-            SliverFixedExtentList(
-            itemExtent: 350.0,
-            delegate: SliverChildListDelegate(
-              [
-                events[0],
-                events[1],
-                events[2],
-              ],
-            ),
-            ),
-        ],
-    ),
+    return RipplePage(
+      pageKey: pageKey,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Container(
+          margin: EdgeInsets.only(top: 40),
+          child: CustomScrollView(
+            slivers: [
+              SliverAppBar(
+                expandedHeight: 180,
+                backgroundColor: Colors.white,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: Image.asset('assets/Events-appbar.png',fit: BoxFit.cover,),
+                  title:  Container(
+                    margin: EdgeInsets.only(bottom: 15),
+                    child: Text('Events',style: TextStyle(fontFamily: 'Dancing',color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold,letterSpacing: 1.5),),
+                  ),
+                  centerTitle: true,
+              ),
+              ),
+              SliverFixedExtentList(
+              itemExtent: 350.0,
+              delegate: SliverChildListDelegate(
+                [
+                  events[0],
+                  events[1],
+                  events[2],
+                ],
+              ),
+              ),
+          ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Announcements()));
-        },
-        backgroundColor: Colors.grey[600],
-        child: IconButton(
-        icon: Icon(Foundation.megaphone,color: Colors.white,),
-      ),),
+        ),
+        floatingActionButton: RippleEffect(
+          pageKey: pageKey,
+          effectKey: effectKey,
+          color: Color(0xFFced7d8),
+          child: FloatingActionButton(
+            onPressed: (){
+              RippleEffect.start(effectKey, toNextPage);
+            },
+            backgroundColor: Colors.grey[600],
+            child: IconButton(
+            icon: Icon(Foundation.megaphone,color: Colors.white,),
+          ),),
+        ),
+      ),
     );
   }
+   Future<void> toNextPage() => Navigator.of(context).push(
+     FadeRouteBuilder(
+       page: Announcements(),
+     ),
+   );
 }
 class Event_template extends StatelessWidget {
   @override
@@ -80,7 +96,7 @@ class Event_template extends StatelessWidget {
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(13),
               color: Colors.white,
               boxShadow: [BoxShadow(
                 color: Colors.grey,
