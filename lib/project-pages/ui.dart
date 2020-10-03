@@ -12,7 +12,10 @@ class UI extends StatelessWidget {
             expandedHeight: 200,
             backgroundColor: Colors.white,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset('assets/ui-projects.png',fit: BoxFit.cover,),
+              background: Padding(
+                padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.05),
+                child: Image.asset('assets/ui-projects.png',fit: BoxFit.cover,),
+              ),
             ),
           ),
           SliverList(

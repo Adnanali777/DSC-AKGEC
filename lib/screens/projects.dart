@@ -83,13 +83,15 @@ class categories_cards extends StatelessWidget {
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => route));
                 },
-                child: Image.asset(image,fit: BoxFit.fill,)
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Image.asset(image,fit: BoxFit.fill,),
+                )
             ),
           ),
           Expanded(
             flex: 1,
             child: Container(
-
               margin: EdgeInsets.only(top: 10),
               child: Text(text,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black,),),
             ),

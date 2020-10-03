@@ -15,7 +15,10 @@ class ml extends StatelessWidget {
           flexibleSpace: Container(
             margin: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.015),
             child: FlexibleSpaceBar(
-            background: Image.asset('assets/ml-projects.png',fit: BoxFit.cover,height: double.infinity,),
+             background: Padding(
+               padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.03),
+               child: Image.asset('assets/ml-projects.png',fit: BoxFit.cover,height: double.infinity,),
+             ),
         ),
           ),
         ),

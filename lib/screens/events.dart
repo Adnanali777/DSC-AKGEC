@@ -18,6 +18,7 @@ class _EventsState extends State<Events> {
   Event_template(image: 'assets/ai-workshop.png',title: 'ODSC Workshop',category: 'Artificial Intelligence',date: '24 October 2020',time: '4:00 PM - 6:00 PM',place: 'Seminar Hall , Admin Block',place_detail: 'JSS Academy',about: lipsum.createText(numParagraphs: 1,numSentences: 7),),
   Event_template(image: 'assets/webd-event.png',title: 'WebMorph 2.0',category: 'Web Development',date: '2 November 2020',time: '12:00 PM - 2:00 PM',place: 'Banquet Hall Sun View Int',place_detail: 'Karol Bagh , Delhi',about:lipsum.createText(numParagraphs: 1,numSentences: 5) ),
   ];
+
   @override
   Widget build(BuildContext context) {
     return RipplePage(
@@ -69,13 +70,13 @@ class _EventsState extends State<Events> {
       ),
     );
   }
-   Future<void> toNextPage() => Navigator.of(context).push(
+   toNextPage() => Navigator.of(context).push(
      FadeRouteBuilder(
        page: Announcements(),
      ),
    );
 }
-class Event_template extends StatelessWidget {
+class Event_template extends StatefulWidget {
   @override
   String image;
   String title;
@@ -86,62 +87,94 @@ class Event_template extends StatelessWidget {
   String place_detail;
   String about;
   Event_template({this.image,this.title,this.category,this.date,this.about,this.place_detail,this.place,this.time});
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: FlatButton(
-        onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => EventDetails(image: image,title: title,date: date,time: time,place: place,place_detail: place_detail,about: about,)));
-        },
-        child: Container(
-          margin: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(13),
-              color: Colors.white,
-              boxShadow: [BoxShadow(
-                color: Colors.grey,
-                blurRadius: 5.0,
-              ),]
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 2,
-                child: Hero(
-                  tag: 'event-img-$image',
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      image: DecorationImage(image: AssetImage(image),fit: BoxFit.cover),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 25,),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(title,style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Nanum',fontSize: 18),),
-                      SizedBox(height: 20,),
-                      Text(category,style: TextStyle(fontSize: 17,color: Colors.grey[700],fontFamily: 'Nanum'),),
-                      SizedBox(height: 8,),
-                      Text(date,style: TextStyle(fontSize: 12,color: Colors.grey[700],fontFamily: 'Nanum'),),
 
-                    ],
-                  ),
+  @override
+  _Event_templateState createState() => _Event_templateState();
+}
+
+class _Event_templateState extends State<Event_template> with SingleTickerProviderStateMixin{
+  Animation animation;
+  AnimationController animationController;
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      duration: Duration(milliseconds: 1000),
+      vsync: this,
+    );
+    animation = Tween(begin: -1.0 , end: 0).animate(CurvedAnimation(
+      parent: animationController,
+      curve: Curves.elasticOut,
+    ));
+    animationController.forward();
+  }
+  @override
+  Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    return AnimatedBuilder(
+      animation: animationController,
+      builder: (BuildContext context , Widget child){
+        return Scaffold(
+          backgroundColor: Colors.white,
+          body: Transform(
+            transform: Matrix4.translationValues(animation.value*width, 0.0, 0.0),
+            child: FlatButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => EventDetails(image: widget.image,title: widget.title,date: widget.date,time: widget.time,place: widget.place,place_detail: widget.place_detail,about: widget.about,)));
+              },
+              child: Container(
+                margin: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: Colors.white,
+                    boxShadow: [BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 5.0,
+                    ),]
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Hero(
+                        tag: 'event-img-${widget.image}',
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            image: DecorationImage(image: AssetImage(widget.image),fit: BoxFit.cover),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 25,),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(widget.title,style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Nanum',fontSize: 18),),
+                            SizedBox(height: 20,),
+                            Text(widget.category,style: TextStyle(fontSize: 17,color: Colors.grey[700],fontFamily: 'Nanum'),),
+                            SizedBox(height: 8,),
+                            Text(widget.date,style: TextStyle(fontSize: 12,color: Colors.grey[700],fontFamily: 'Nanum'),),
+
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
+
     );
   }
 }
