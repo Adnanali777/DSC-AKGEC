@@ -26,7 +26,8 @@ class _EventsState extends State<Events> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Container(
-          margin: EdgeInsets.only(top: 40),
+          margin: EdgeInsets.only(top: 40,bottom: 0),
+          padding: EdgeInsets.all(0),
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
@@ -114,60 +115,64 @@ class _Event_templateState extends State<Event_template> with SingleTickerProvid
     return AnimatedBuilder(
       animation: animationController,
       builder: (BuildContext context , Widget child){
-        return Scaffold(
-          backgroundColor: Colors.white,
-          body: Transform(
-            transform: Matrix4.translationValues(animation.value*width, 0.0, 0.0),
-            child: FlatButton(
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => EventDetails(image: widget.image,title: widget.title,date: widget.date,time: widget.time,place: widget.place,place_detail: widget.place_detail,about: widget.about,)));
-              },
-              child: Container(
-                margin: EdgeInsets.symmetric(vertical: 15,horizontal: 10),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(13),
-                    color: Colors.white,
-                    boxShadow: [BoxShadow(
-                      color: Colors.grey,
-                      blurRadius: 5.0,
-                    ),]
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      flex: 2,
-                      child: Hero(
-                        tag: 'event-img-${widget.image}',
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            image: DecorationImage(image: AssetImage(widget.image),fit: BoxFit.cover),
+        return Container(
+          margin: EdgeInsets.all(0),
+          padding: EdgeInsets.all(0),
+          child: Scaffold(
+            backgroundColor: Colors.white,
+            body: Transform(
+              transform: Matrix4.translationValues(animation.value*width, 0.0, 0.0),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => EventDetails(image: widget.image,title: widget.title,date: widget.date,time: widget.time,place: widget.place,place_detail: widget.place_detail,about: widget.about,)));
+                },
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 15,horizontal: 25),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(13),
+                      color: Colors.white,
+                      boxShadow: [BoxShadow(
+                        color: Colors.grey,
+                        blurRadius: 5.0,
+                      ),]
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 2,
+                        child: Hero(
+                          tag: 'event-img-${widget.image}',
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              image: DecorationImage(image: AssetImage(widget.image),fit: BoxFit.cover),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    SizedBox(height: 25,),
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(widget.title,style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Nanum',fontSize: 18),),
-                            SizedBox(height: 20,),
-                            Text(widget.category,style: TextStyle(fontSize: 17,color: Colors.grey[700],fontFamily: 'Nanum'),),
-                            SizedBox(height: 8,),
-                            Text(widget.date,style: TextStyle(fontSize: 12,color: Colors.grey[700],fontFamily: 'Nanum'),),
+                      SizedBox(height: 25,),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(widget.title,style: TextStyle(fontWeight: FontWeight.bold,fontFamily: 'Nanum',fontSize: 18),),
+                              SizedBox(height: 20,),
+                              Text(widget.category,style: TextStyle(fontSize: 17,color: Colors.grey[700],fontFamily: 'Nanum'),),
+                              SizedBox(height: 8,),
+                              Text(widget.date,style: TextStyle(fontSize: 12,color: Colors.grey[700],fontFamily: 'Nanum'),),
 
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
