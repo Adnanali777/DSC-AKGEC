@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/about us.dart';
+import 'screens/home.dart';
 import 'dart:async';
 import 'package:dsc/screens/navbar.dart';
 

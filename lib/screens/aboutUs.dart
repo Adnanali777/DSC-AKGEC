@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:dsc/screens/OurTeam.dart';
 final _controller = PageController(
   initialPage: 0,
 );
@@ -68,18 +69,3 @@ class _AboutState extends State<About> {
   }
 }
 
-class dscTeam extends StatefulWidget {
-  @override
-  _dscTeamState createState() => _dscTeamState();
-}
-
-class _dscTeamState extends State<dscTeam> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('Our Team'),
-      ),
-    );
-  }
-}
