@@ -34,6 +34,8 @@ class _AboutState extends State<About> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Stack(
             children:[
@@ -62,6 +64,16 @@ class _AboutState extends State<About> {
                 ),
               ),
            ]
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 25),
+            child: Text('About Us',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 27,letterSpacing: 1.1,color: Colors.grey[800]),),
+          ),
+          Expanded(
+            child:Container(
+              padding: EdgeInsets.symmetric(horizontal: 15,vertical: 18),
+              child: Text('Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome.',style: TextStyle(fontSize: 15,letterSpacing: 0.9,color: Colors.grey[800],),textAlign: TextAlign.justify,),
+            ),
           ),
         ],
       ),
