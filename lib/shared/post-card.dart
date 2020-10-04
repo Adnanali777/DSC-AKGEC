@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'file:///D:/apps/dsc/lib/shared/blogs.dart';
-import 'package:dsc/screens/home.dart';
+import 'package:dsc/screens/about us.dart';
 class blog_card_template extends StatelessWidget {
   String image;
   String userimg;

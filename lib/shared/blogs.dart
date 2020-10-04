@@ -1,7 +1,7 @@
 import 'package:dsc/shared/heart.dart';
 import 'package:dsc/shared/post-card.dart';
 import 'package:flutter/material.dart';
-import 'package:dsc/screens/home.dart';
+import 'package:dsc/screens/about us.dart';
 class Details extends StatefulWidget {
   String image;
   String userimg;

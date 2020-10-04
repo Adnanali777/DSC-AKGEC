@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:dsc/screens/home.dart';
+import 'package:dsc/screens/about us.dart';
 import 'package:dsc/screens/events.dart';
 import 'package:dsc/screens/projects.dart';
 import 'package:dsc/screens/team.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class mynavbar extends StatefulWidget {
   @override
@@ -46,8 +47,8 @@ class _mynavbarState extends State<mynavbar> {
             icon: Icon(Icons.build),
           ),
           BottomNavigationBarItem(
-            title: Text('Our Team'),
-            icon: Icon(Icons.group),
+            title: Text('About Us'),
+            icon: Icon(Icons.info),
           ),
         ],
       ),
