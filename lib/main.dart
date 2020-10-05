@@ -10,7 +10,6 @@ void main() {
       scaffoldBackgroundColor: Colors.white,
       textTheme: TextTheme(
         body1: TextStyle(color: Colors.black),
-        bodyText1:  TextStyle(color: Colors.black),
       ),
     ),
     debugShowCheckedModeBanner: false,

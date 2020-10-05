@@ -7,7 +7,7 @@ packages:
       name: animated_splash_screen
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.1+2"
   async:
     dependency: transitive
     description:
@@ -78,6 +78,13 @@ packages:
       url: "https://github.com/flutter-studio/flutter-icons.git"
     source: git
     version: "1.1.0"
+  flutter_statusbarcolor:
+    dependency: "direct main"
+    description:
+      name: flutter_statusbarcolor
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -115,7 +122,7 @@ packages:
       name: page_transition
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.6"
+    version: "1.1.7+2"
   path:
     dependency: transitive
     description:
