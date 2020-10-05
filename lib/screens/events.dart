@@ -26,7 +26,7 @@ class _EventsState extends State<Events> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Container(
-          margin: EdgeInsets.only(top: 40,bottom: 0),
+          margin: EdgeInsets.only(top: 24,bottom: 0),
           padding: EdgeInsets.all(0),
           child: CustomScrollView(
             slivers: [

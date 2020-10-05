@@ -70,9 +70,18 @@ class _AboutState extends State<About> {
             child: Text('About Us',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 27,letterSpacing: 1.1,color: Colors.grey[800]),),
           ),
           Expanded(
-            child:Container(
-              padding: EdgeInsets.symmetric(horizontal: 15,vertical: 18),
-              child: Text('Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are welcome.',style: TextStyle(fontSize: 15,letterSpacing: 0.9,color: Colors.grey[800],),textAlign: TextAlign.justify,),
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.fromLTRB(15, 18, 15, 0),
+                  child: Text('Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are all welcome',style: TextStyle(fontSize: 15,letterSpacing: 0.9,color: Colors.grey[800],),textAlign: TextAlign.start,),
+                ),
+                SizedBox(height: 18,),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: Text('Developer Student Club AKGEC is inspired by Google Developers Family. We try to engage student developers through our hack events, codelabs and meetups. The motive is to create a local ecosystem of programmers & hackers in and around the campus.',style: TextStyle(fontSize: 15,letterSpacing: 0.9,color: Colors.grey[800],),textAlign: TextAlign.start,),
+                ),
+              ],
             ),
           ),
         ],
