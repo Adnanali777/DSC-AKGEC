@@ -44,12 +44,10 @@ class _EventsState extends State<Events> {
               ),
               SliverFixedExtentList(
               itemExtent: 350.0,
-              delegate: SliverChildListDelegate(
-                [
-                  events[0],
-                  events[1],
-                  events[2],
-                ],
+              delegate: SliverChildBuilderDelegate(
+                  (BuildContext context , index){
+                    return events[index];
+                  },childCount: events.length,
               ),
               ),
           ],
