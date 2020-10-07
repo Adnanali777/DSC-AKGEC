@@ -17,6 +17,7 @@ class _dscTeamState extends State<dscTeam> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
                 child: Container(
@@ -61,6 +62,19 @@ class _dscTeamState extends State<dscTeam> {
                           ),
                         ],
                     ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                height: MediaQuery.of(context).size.height*0.3,
+                width: MediaQuery.of(context).size.width*0.43,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow:[ BoxShadow(
+                    color: Colors.grey,
+                    blurRadius: 3.0,
+                  )],
                 ),
               ),
             ],
