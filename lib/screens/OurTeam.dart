@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-Icon twitter = Icon(AntDesign.twitter,size: 20,color: Colors.blue,);
-Icon linkedIn = Icon(AntDesign.linkedin_square,size: 20,color: Colors.blue,);
-Icon github = Icon(AntDesign.github,size: 20,color: Colors.grey[800],);
+GestureDetector twitter =GestureDetector(child:Icon(AntDesign.twitter,size: 20,color: Colors.blue,));
+GestureDetector linkedIn = GestureDetector(child:Icon(AntDesign.linkedin_square,size: 20,color: Colors.blue,));
+GestureDetector github = GestureDetector(child:Icon(AntDesign.github,size: 20,color: Colors.grey[800],));
 
 class dscTeam extends StatefulWidget {
   @override
@@ -47,11 +47,11 @@ class _dscTeamState extends State<dscTeam> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              GestureDetector(onTap: (){},child: linkedIn),
+                               linkedIn,
                               SizedBox(width: 39,),
-                              GestureDetector(onTap: (){},child: github),
+                               github,
                               SizedBox(width: 39,),
-                              GestureDetector(onTap: (){},child: twitter),
+                               twitter,
                             ],
                           ),
                           SizedBox(height: 30,),
