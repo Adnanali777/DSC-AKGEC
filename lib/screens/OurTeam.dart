@@ -30,7 +30,7 @@ class _dscTeamState extends State<dscTeam> {
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey,
+                        color: Colors.grey[700],
                         blurRadius: 7.0,
                       ),
                     ],
@@ -64,18 +64,40 @@ class _dscTeamState extends State<dscTeam> {
                     ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-                height: MediaQuery.of(context).size.height*0.3,
-                width: MediaQuery.of(context).size.width*0.43,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow:[ BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 3.0,
-                  )],
-                ),
+              SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                  margin: EdgeInsets.symmetric(horizontal: 13,vertical: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+                  height: MediaQuery.of(context).size.height*0.3,
+                  width: MediaQuery.of(context).size.width*0.43,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow:[ BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 3.0,
+                    )],
+                  ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CircleAvatar(radius: 35,backgroundImage: AssetImage('assets/user.png'),),
+                        SizedBox(height: 10,),
+                        Text('Apoorva Jain',style: TextStyle(fontSize: 19.5,color: Colors.black,),),
+                        SizedBox(height: 8,),
+                        Text('Core Member',style: TextStyle(color: Colors.grey[600],fontSize: 12),),
+                        SizedBox(height: 8,),
+                        Text('Web Development',style: TextStyle(color: Colors.grey[600],fontSize: 12),),
+                        SizedBox(height: 22,),
+                        Row(mainAxisAlignment:MainAxisAlignment.center,children: [linkedIn,SizedBox(width: 20,),github,SizedBox(width: 20,),twitter],),
+                      ],
+                    ),
+                 ),
+
+                ],
               ),
             ],
           ),
@@ -84,3 +106,5 @@ class _dscTeamState extends State<dscTeam> {
     );
   }
 }
+
+
