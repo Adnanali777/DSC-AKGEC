@@ -15,7 +15,7 @@ class _EventsState extends State<Events> {
    final effectKey = RippleEffect.createGlobalKey();
   List<Event_template> events = [
   Event_template(image: 'assets/ui-events.png',title: 'DesignTO',category: 'UI Design',date: '13 October 2020',time:'1:00 PM - 3:00 PM',place:'CS/IT Block , Second Floor',place_detail:'AKGEC - Ghaziabad',about:lipsum.createText(numParagraphs: 1,numSentences: 6) ),
-  Event_template(image: 'assets/ai-workshop.png',title: 'ODSC Workshop',category: 'Artificial Intelligence',date: '24 October 2020',time: '4:00 PM - 6:00 PM',place: 'Seminar Hall , Admin Block',place_detail: 'JSS Academy',about: lipsum.createText(numParagraphs: 1,numSentences: 7),),
+  Event_template(image: 'assets/ai-workshop.png',title: 'ODSC Workshop',category: 'Artificial Intelligence',date: '24 October 2020',time: '4:00 PM - 6:00 PM',place: 'Seminar Hall , Admin Block',place_detail: 'JSS Academy',about: lipsum.createText(numParagraphs: 1,numSentences: 4),),
   Event_template(image: 'assets/webd-event.png',title: 'WebMorph 2.0',category: 'Web Development',date: '2 November 2020',time: '12:00 PM - 2:00 PM',place: 'Banquet Hall Sun View Int',place_detail: 'Karol Bagh , Delhi',about:lipsum.createText(numParagraphs: 1,numSentences: 5) ),
   ];
 
@@ -106,6 +106,11 @@ class _Event_templateState extends State<Event_template> with SingleTickerProvid
       curve: Curves.elasticOut,
     ));
     animationController.forward();
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
   }
   @override
   Widget build(BuildContext context) {
