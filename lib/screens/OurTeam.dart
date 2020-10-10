@@ -26,6 +26,9 @@ class _dscTeamState extends State<dscTeam> {
     MemberLayout(img: 'assets/user.png',name: 'Anshika Bajpai',memberType: 'Core Member',domain: 'App Development'),
     MemberLayout(img: 'assets/user.png',name: 'Nirbhay Shukla',memberType: 'Core Member',domain: 'App Development'),
     MemberLayout(img: 'assets/user.png',name: 'Rishabh Singh',memberType: 'Core Member',domain: 'App Development'),
+    MemberLayout(img: 'assets/user.png',name:'Shatakshi Upadhyay' ,memberType: 'Core Member',domain: 'Managerial',),
+    MemberLayout(img: 'assets/user.png',name:'Ayushi Bansal' ,memberType: 'Core Member',domain: 'Managerial',),
+    MemberLayout(img: 'assets/user.png',name:'Pranjal Maurya' ,memberType: 'Core Member',domain: 'Managerial',),
   ];
   @override
   Widget build(BuildContext context) {
