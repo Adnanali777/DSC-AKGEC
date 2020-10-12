@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dsc/screens/OurTeam.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class MemberLayout extends StatefulWidget {
@@ -8,6 +9,7 @@ class MemberLayout extends StatefulWidget {
   String memberType;
   String domain;
   MemberLayout({this.img,this.memberType,this.domain,this.name});
+
 
   @override
   _MemberLayoutState createState() => _MemberLayoutState();
@@ -69,7 +71,41 @@ class _MemberLayoutState extends State<MemberLayout> with SingleTickerProviderSt
                 SizedBox(height: 8,),
                 Text(widget.domain,style: TextStyle(color: Colors.grey[600],fontSize: 11.7),),
                 SizedBox(height: 22,),
-                Row(mainAxisAlignment:MainAxisAlignment.center,children: [linkedIn,SizedBox(width: 20,),github,SizedBox(width: 20,),twitter],),
+                Row(mainAxisAlignment:MainAxisAlignment.center,children: [
+                  GestureDetector(
+                      onTap: ()async{
+                        const url = 'https://www.linkedin.com/feed/';
+                        if (await canLaunch(url)) {
+                        await launch(url);
+                        } else {
+                        throw 'Could not launch $url';
+                        }
+                      },
+                      child: linkedIn),
+                  SizedBox(width: 20,),
+                  GestureDetector(
+                      onTap: ()async{
+                        const url = 'https://github.com/';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: github),
+                  SizedBox(width: 20,),
+                  GestureDetector(
+                      onTap: ()async{
+                        const url = 'https://twitter.com/home?lang=en';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: twitter),
+                ],
+                ),
               ],
             ),
           ),
