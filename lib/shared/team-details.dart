@@ -28,19 +28,22 @@ class _MemberLayoutState extends State<MemberLayout> with SingleTickerProviderSt
       curve: Interval(0.7,1.0,curve: Curves.fastOutSlowIn),
     ));
     animationControllerteam.forward();
+    animationControllerteam.addStatusListener((status) {
+      if (status == AnimationStatus.completed){
+        animationControllerteam.stop(canceled: true);
+      }
+    });
   }
+
   @override
-  void dispose() {
-    super.dispose();
-    animationControllerteam.dispose();
-  }
+
 
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     return AnimatedBuilder(
       animation: animationControllerteam,
-      builder: (BuildContext context,Widget child){
+      builder: (BuildContext context,_){
         return Transform(
           transform: Matrix4.translationValues(0, animationteam.value*width, 0),
           child: Container(

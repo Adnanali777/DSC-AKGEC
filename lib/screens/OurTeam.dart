@@ -13,6 +13,7 @@ class dscTeam extends StatefulWidget {
 
 class _dscTeamState extends State<dscTeam> with SingleTickerProviderStateMixin{
   Animation animationlead;
+  Animation animationteam;
   AnimationController animationControllerlead;
   @override
   void initState() {
@@ -23,7 +24,11 @@ class _dscTeamState extends State<dscTeam> with SingleTickerProviderStateMixin{
     );
     animationlead = Tween(begin: -1.0 , end: 0).animate(CurvedAnimation(
       parent: animationControllerlead,
-      curve: Curves.fastOutSlowIn,
+      curve: Interval(0.5,1.0,curve:Curves.fastOutSlowIn),
+    ));
+    animationteam = Tween<double>(begin: 1,end: 0).animate(CurvedAnimation(
+      parent: animationControllerlead,
+      curve: Interval(0.7,1.0,curve: Curves.fastOutSlowIn),
     ));
     animationControllerlead.forward();
   }
@@ -72,7 +77,7 @@ class _dscTeamState extends State<dscTeam> with SingleTickerProviderStateMixin{
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(15),
-                              border: Border.all(width: 1.0,color: Colors.grey[300],style: BorderStyle.solid),
+                              border: Border.all(width: 1.0,color: Colors.grey[400],style: BorderStyle.solid),
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey[500],
@@ -125,6 +130,7 @@ class _dscTeamState extends State<dscTeam> with SingleTickerProviderStateMixin{
                       },
 
                     ),
+
                   ],)
             ),
             SliverPadding(
@@ -139,7 +145,7 @@ class _dscTeamState extends State<dscTeam> with SingleTickerProviderStateMixin{
                 delegate: SliverChildBuilderDelegate((BuildContext context,
                     int index) {
                   return members[index];
-                   },
+                },
                   childCount: members.length,
                 ),
               ),

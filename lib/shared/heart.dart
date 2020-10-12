@@ -47,7 +47,6 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
         });
       };
     });
-    print(_controller.value);
   }
   @override
   void dispose() {
