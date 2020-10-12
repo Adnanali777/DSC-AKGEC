@@ -102,7 +102,7 @@ class _Event_templateState extends State<Event_template> with SingleTickerProvid
       vsync: this,
     );
     animation = Tween(begin: -1.0 , end: 0).animate(CurvedAnimation(
-      parent: animationController,
+      parent: animation,
       curve: Curves.elasticOut,
     ));
     animationController.forward();

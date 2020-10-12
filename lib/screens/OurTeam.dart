@@ -11,7 +11,22 @@ class dscTeam extends StatefulWidget {
   _dscTeamState createState() => _dscTeamState();
 }
 
-class _dscTeamState extends State<dscTeam> {
+class _dscTeamState extends State<dscTeam> with SingleTickerProviderStateMixin{
+  Animation animationlead;
+  AnimationController animationControllerlead;
+  @override
+  void initState() {
+    super.initState();
+    animationControllerlead = AnimationController(
+      duration: Duration(milliseconds: 600),
+      vsync: this,
+    );
+    animationlead = Tween(begin: -1.0 , end: 0).animate(CurvedAnimation(
+      parent: animationControllerlead,
+      curve: Curves.fastOutSlowIn,
+    ));
+    animationControllerlead.forward();
+  }
   List<MemberLayout> members = [
     MemberLayout(img: 'assets/user.png',name: 'Apoorv Jain',memberType: 'Core Member',domain: 'Machine Learning'),
     MemberLayout(img: 'assets/user.png',name: 'Tarun Raghav',memberType: 'Core Member',domain: 'Machine Learning'),
@@ -31,6 +46,11 @@ class _dscTeamState extends State<dscTeam> {
     MemberLayout(img: 'assets/user.png',name:'Pranjal Maurya' ,memberType: 'Core Member',domain: 'Managerial',),
   ];
   @override
+  void dispose() {
+    super.dispose();
+    animationControllerlead.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -41,69 +61,69 @@ class _dscTeamState extends State<dscTeam> {
                 itemExtent: 400,
                 delegate: SliverChildListDelegate(
                   [
-                    TweenAnimationBuilder(
-                      child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                        margin: EdgeInsets.fromLTRB(17, 30, 17, 15),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey[700],
-                              blurRadius: 8.0,
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            CircleAvatar(
-                              radius: 50, backgroundImage: AssetImage(
-                                'assets/mansi_goel.jpg'),),
-                            SizedBox(height: 10,),
-                            Text('Mansi Goel', style: TextStyle(fontSize: 20,
-                                letterSpacing: 0.9,
-                                color: Colors.black),),
-                            SizedBox(height: 12,),
-                            Text('DSC LEAD', style: TextStyle(fontSize: 15,
-                                letterSpacing: 0.3,
-                                color: Colors.grey[600]),),
-                            SizedBox(height: 17,),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                linkedIn,
-                                SizedBox(width: 39,),
-                                github,
-                                SizedBox(width: 39,),
-                                twitter,
+                    AnimatedBuilder(
+                      animation: animationControllerlead,
+                      builder: (BuildContext context,Widget child){
+                        return Transform(
+                          transform: Matrix4.translationValues(0, animationlead.value*width, 0),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                            margin: EdgeInsets.fromLTRB(17, 30, 17, 15),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(15),
+                              border: Border.all(width: 1.0,color: Colors.grey[300],style: BorderStyle.solid),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey[500],
+                                  blurRadius: 5.0,
+                                  offset: Offset(5,7),
+                                ),
                               ],
                             ),
-                            SizedBox(height: 30,),
-                            Expanded(
-                              child: Container(
-                                child: Text(
-                                  'Trainee at bosch rexroth. LEAD at DSC by Google developers.Core team member at (techno-managerial society) horizon, core team member at DSC-AKGEC. Done internship of web development. Knowledge about pneumatics, hydraulics, plc.',
-                                  style: TextStyle(fontSize: 13,
-                                      color: Colors.grey[600],
-                                      wordSpacing: 2.3),
-                                  textAlign: TextAlign.center,
-                                  softWrap: true,),
-                              ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                CircleAvatar(
+                                  radius: 50, backgroundImage: AssetImage(
+                                    'assets/mansi_goel.jpg'),),
+                                SizedBox(height: 10,),
+                                Text('Mansi Goel', style: TextStyle(fontSize: 20,
+                                    letterSpacing: 0.9,
+                                    color: Colors.black),),
+                                SizedBox(height: 12,),
+                                Text('DSC LEAD', style: TextStyle(fontSize: 15,
+                                    letterSpacing: 0.3,
+                                    color: Colors.grey[600]),),
+                                SizedBox(height: 17,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    linkedIn,
+                                    SizedBox(width: 39,),
+                                    github,
+                                    SizedBox(width: 39,),
+                                    twitter,
+                                  ],
+                                ),
+                                SizedBox(height: 30,),
+                                Expanded(
+                                  child: Container(
+                                    child: Text(
+                                      'Trainee at bosch rexroth. LEAD at DSC by Google developers.Core team member at (techno-managerial society) horizon, core team member at DSC-AKGEC. Done internship of web development. Knowledge about pneumatics, hydraulics, plc.',
+                                      style: TextStyle(fontSize: 13,
+                                          color: Colors.grey[600],
+                                          wordSpacing: 2.3),
+                                      textAlign: TextAlign.center,
+                                      softWrap: true,),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      ),
-                      duration: Duration(milliseconds: 500),
-                      tween: Tween<double>(begin: -1.0,end: 0.0),
-                      curve: Interval(0.5,1.0,curve: Curves.fastOutSlowIn),
-                      builder: (BuildContext context,double _val,Widget child){
-                        return Transform(
-                          transform: Matrix4.translationValues(0, _val*width, 0),
-                          child: child,
+                          ),
                         );
                       },
+
                     ),
                   ],)
             ),
