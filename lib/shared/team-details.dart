@@ -89,9 +89,9 @@ class _MemberLayoutState extends State<MemberLayout> with AutomaticKeepAliveClie
           ),
         ),
       ),
-        duration: Duration(milliseconds: 600),
+        duration: Duration(milliseconds: 650),
         tween: Tween<double>(begin: 1.0 , end: 0),
-        curve: Interval(0.7,1,curve:Curves.fastOutSlowIn),
+        curve: Interval(0.8,1,curve:Curves.fastOutSlowIn),
         builder: (BuildContext context , double _val , Widget child) {
           return Transform(
             transform: Matrix4.translationValues(0, _val * width, 0.0),

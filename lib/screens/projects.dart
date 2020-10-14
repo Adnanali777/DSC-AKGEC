@@ -73,8 +73,8 @@ class _categories_cardsState extends State<categories_cards> with SingleTickerPr
   AnimationController animationproject;
   Animation animatewidth;
   Animation animateheight;
-  final double width = 175;
-  final double height = 273;
+  final double width = 0.45;
+  final double height = 0.36;
   @override
   void initState() {
     super.initState();
@@ -102,8 +102,8 @@ class _categories_cardsState extends State<categories_cards> with SingleTickerPr
         return Container(
           padding: EdgeInsets.all(5),
           margin: EdgeInsets.all(9.5),
-          height: animateheight.value,
-          width: animatewidth.value,
+          height: MediaQuery.of(context).size.height*animateheight.value,
+          width: MediaQuery.of(context).size.width*animatewidth.value,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             boxShadow: [BoxShadow(
