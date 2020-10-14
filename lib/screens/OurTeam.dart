@@ -124,8 +124,7 @@ class _dscTeamState extends State<dscTeam> with AutomaticKeepAliveClientMixin {
                     curve: Interval(0.5,1,curve:Curves.fastOutSlowIn),
                     builder: (BuildContext context , double _val , Widget child) {
                       return Transform(
-                        transform: Matrix4.translationValues(0, _val * width,
-                            0.0),
+                        transform: Matrix4.translationValues(0, _val * width, 0.0),
                         child: child,
                       );
                     }

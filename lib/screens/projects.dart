@@ -9,7 +9,9 @@ class Projects extends StatefulWidget {
   _ProjectsState createState() => _ProjectsState();
 }
 
-class _ProjectsState extends State<Projects> {
+class _ProjectsState extends State<Projects> with AutomaticKeepAliveClientMixin{
+  @override
+  bool get wantKeepAlive => true;
   categories_cards category1 = categories_cards(image: 'assets/project-ml.png',text: 'Machine Learning',route: ml(),);
   categories_cards category2 = categories_cards(image: 'assets/webd2.png',text: 'Web Development',route: Web_d(),);
   categories_cards category3 = categories_cards(image: 'assets/ui-project.png',text: 'UI Designs',route: UI(),);
@@ -55,49 +57,84 @@ class _ProjectsState extends State<Projects> {
   }
 }
 
-class categories_cards extends StatelessWidget {
+class categories_cards extends StatefulWidget {
   String image;
   String text;
   Widget route;
   categories_cards({this.image,this.text,this.route});
+
+  @override
+  _categories_cardsState createState() => _categories_cardsState();
+}
+
+class _categories_cardsState extends State<categories_cards> with SingleTickerProviderStateMixin{
+  AnimationController animationproject;
+  Animation animatewidth;
+  Animation animateheight;
+  final double width = 175;
+  final double height = 270;
+  @override
+  void initState() {
+    super.initState();
+    animationproject = AnimationController(duration: Duration(milliseconds: 350),vsync: this);
+    animatewidth = Tween<double>(begin: 0,end: width).animate(CurvedAnimation(
+      parent: animationproject,
+      curve: Curves.fastLinearToSlowEaseIn,
+    ));
+    animateheight = Tween<double>(begin: 0,end: height).animate(CurvedAnimation(
+      parent: animationproject,
+      curve: Curves.fastLinearToSlowEaseIn,
+    ));
+    animationproject.forward();
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    animationproject.dispose();
+  }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(5), 
-      margin: EdgeInsets.all(9.5),
-      width:MediaQuery.of(context).size.width * 0.45,
-      height: MediaQuery.of(context).size.height * 0.35,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        boxShadow: [BoxShadow(
-          color: Colors.grey,
-          blurRadius: 5.0,
-        ),],
-        color: Colors.white,
-      ),
-      child: Column(
-        children: [
-          Expanded(
-            flex:6,
-            child: GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => route));
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Image.asset(image,fit: BoxFit.fill,),
-                )
-            ),
+    return AnimatedBuilder(
+      animation: animationproject,
+      builder: (BuildContext context , Widget child){
+        return Container(
+          padding: EdgeInsets.all(5),
+          margin: EdgeInsets.all(9.5),
+          height: animateheight.value,
+          width: animatewidth.value,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            boxShadow: [BoxShadow(
+              color: Colors.grey,
+              blurRadius: 5.0,
+            ),],
+            color: Colors.white,
           ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              margin: EdgeInsets.only(top: 10),
-              child: Text(text,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black,),),
-            ),
+          child: Column(
+            children: [
+              Expanded(
+                flex:6,
+                child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => widget.route));
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Image.asset(widget.image,fit: BoxFit.fill,),
+                    )
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  margin: EdgeInsets.only(top: 10),
+                  child: Text(widget.text,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black,),),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

@@ -57,7 +57,7 @@ class _DetailsState extends State<Details> {
                     Image.asset(widget.userimg,height: 30,width: 30,fit: BoxFit.cover,),
                     SizedBox(width: 25,),
                     Text(widget.text2,style: TextStyle(fontSize: 13,color: Colors.grey[800]),),
-                    SizedBox(width: MediaQuery.of(context).size.width*0.25,),
+                    SizedBox(width: MediaQuery.of(context).size.width*0.10,),
                     Heart(),
                   ],
                 ),
