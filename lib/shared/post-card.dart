@@ -14,6 +14,7 @@ class blog_card_template extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(10),
       child: Card(
+        elevation: 5,
           child: Row(
             children: [
               FlatButton(
@@ -33,6 +34,7 @@ class blog_card_template extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
+                  padding: EdgeInsets.only(right: 5),
                   width: double.infinity,
                   margin:EdgeInsets.only(top: 10),
                   child: Column(

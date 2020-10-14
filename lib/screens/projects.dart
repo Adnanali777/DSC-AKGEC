@@ -13,45 +13,47 @@ class _ProjectsState extends State<Projects> with AutomaticKeepAliveClientMixin{
   @override
   bool get wantKeepAlive => true;
   categories_cards category1 = categories_cards(image: 'assets/project-ml.png',text: 'Machine Learning',route: ml(),);
-  categories_cards category2 = categories_cards(image: 'assets/webd2.png',text: 'Web Development',route: Web_d(),);
+  categories_cards category2 = categories_cards(image: 'assets/newwebdev.png',text: 'Web Development',route: Web_d(),);
   categories_cards category3 = categories_cards(image: 'assets/ui-project.png',text: 'UI Designs',route: UI(),);
   categories_cards category4 = categories_cards(image: 'assets/hjhj.png',text: 'App Development',route: App_dev(),);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        constraints: BoxConstraints.expand(),
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 30),
-              padding: EdgeInsets.all(15),
-              child: Text('Categories',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.black,fontFamily: 'PoiretOne',letterSpacing: 1.2),),
-            ),
-            Column(
-              children: [
-                Row(
-                  children: [
-                    category1,
-                    category2,
-                  ],
-                ),
-                SizedBox(height: 18,),
-                Row(
-                  children: [
-                    category3,
-                    category4,
-                  ],
-                )
-              ],
-            ),
-          ],
-        ),
+      body: Center(
+        child: Container(
+          constraints: BoxConstraints.expand(),
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 30),
+                padding: EdgeInsets.all(15),
+                child: Text('Categories',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color: Colors.black,fontFamily: 'PoiretOne',letterSpacing: 1.2),),
+              ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      category1,
+                      category2,
+                    ],
+                  ),
+                  SizedBox(height: 10,),
+                  Row(
+                    children: [
+                      category3,
+                      category4,
+                    ],
+                  )
+                ],
+              ),
+            ],
+          ),
 
+        ),
       ),
     );
   }
@@ -72,7 +74,7 @@ class _categories_cardsState extends State<categories_cards> with SingleTickerPr
   Animation animatewidth;
   Animation animateheight;
   final double width = 175;
-  final double height = 270;
+  final double height = 273;
   @override
   void initState() {
     super.initState();
