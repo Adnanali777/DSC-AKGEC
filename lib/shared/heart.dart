@@ -5,7 +5,9 @@ class Heart extends StatefulWidget {
   _HeartState createState() => _HeartState();
 }
 
-class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
+class _HeartState extends State<Heart> with SingleTickerProviderStateMixin , AutomaticKeepAliveClientMixin{
+  @override
+  bool get wantKeepAlive => true;
   AnimationController _controller;
   Animation<Color> _colorAnimation;
   bool isFav = false;
