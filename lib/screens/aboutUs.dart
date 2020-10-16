@@ -1,3 +1,4 @@
+import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:dsc/screens/OurTeam.dart';
@@ -29,7 +30,9 @@ class About extends StatefulWidget {
   _AboutState createState() => _AboutState();
 }
 
-class _AboutState extends State<About> {
+class _AboutState extends State<About> with AutomaticKeepAliveClientMixin{
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,21 +68,33 @@ class _AboutState extends State<About> {
               ),
            ]
           ),
-          Container(
-            margin: EdgeInsets.only(left: 25),
-            child: Text('About Us',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 27,letterSpacing: 1.1,color: Colors.grey[800]),),
+          DelayedDisplay(
+            delay: Duration(milliseconds: 100),
+            fadingDuration: Duration(milliseconds: 100),
+            child: Container(
+              margin: EdgeInsets.only(left: 25),
+              child: Text('About Us',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 27,letterSpacing: 1.1,color: Colors.grey[800]),),
+            ),
           ),
           Expanded(
             child: Column(
               children: [
-                Container(
-                  padding: EdgeInsets.fromLTRB(15, 18, 15, 0),
-                  child: Text('Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are all welcome',style: TextStyle(fontSize: 15,letterSpacing: 0.9,color: Colors.grey[800],),textAlign: TextAlign.start,),
+                DelayedDisplay(
+                  delay: Duration(milliseconds: 200),
+                  fadingDuration: Duration(milliseconds: 300),
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(15, 18, 15, 0),
+                    child: Text('Developer Student Clubs are university based community groups for students interested in Google developer technologies. Students from all undergraduate or graduate programs with an interest in growing as a developer are all welcome',style: TextStyle(fontSize: 15,letterSpacing: 0.9,color: Colors.grey[800],),textAlign: TextAlign.start,),
+                  ),
                 ),
                 SizedBox(height: 18,),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
-                  child: Text('Developer Student Club AKGEC is inspired by Google Developers Family. We try to engage student developers through our hack events, codelabs and meetups. The motive is to create a local ecosystem of programmers & hackers in and around the campus.',style: TextStyle(fontSize: 15,letterSpacing: 0.9,color: Colors.grey[800],),textAlign: TextAlign.start,),
+                DelayedDisplay(
+                  delay: Duration(milliseconds: 300),
+                  fadingDuration: Duration(milliseconds: 300),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Text('Developer Student Club AKGEC is inspired by Google Developers Family. We try to engage student developers through our hack events, codelabs and meetups. The motive is to create a local ecosystem of programmers & hackers in and around the campus.',style: TextStyle(fontSize: 15,letterSpacing: 0.9,color: Colors.grey[800],),textAlign: TextAlign.start,),
+                  ),
                 ),
               ],
             ),

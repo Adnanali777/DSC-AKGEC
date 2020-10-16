@@ -28,6 +28,7 @@ dependencies:
   url_launcher: ^5.7.1
   animated_splash_screen: ^1.0.1
   ripple_effect: ^0.1.1
+  delayed_display: ^1.0.3
   flutter_statusbarcolor: ^0.2.3
   lipsum: ^1.0.1
   flutter_icons:

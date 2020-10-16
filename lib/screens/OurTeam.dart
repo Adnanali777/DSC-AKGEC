@@ -12,7 +12,7 @@ class dscTeam extends StatefulWidget {
   _dscTeamState createState() => _dscTeamState();
 }
 
-class _dscTeamState extends State<dscTeam> with AutomaticKeepAliveClientMixin {
+class _dscTeamState extends State<dscTeam> with AutomaticKeepAliveClientMixin,SingleTickerProviderStateMixin {
   @override
   bool get wantKeepAlive => true;
 
