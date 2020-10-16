@@ -109,8 +109,8 @@ class _Event_templateState extends State<Event_template> with SingleTickerProvid
   }
   @override
   void dispose() {
-    super.dispose();
     animationController.dispose();
+    super.dispose();
   }
   @override
   Widget build(BuildContext context) {
