@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/apps/dsc/lib/shared/blogs.dart';
+import 'file:///D:/apps/DSC AKGEC//lib/shared/blogs.dart';
 import 'package:dsc/screens/home.dart';
 class blog_card_template extends StatefulWidget {
   String image;

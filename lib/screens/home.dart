@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///D:/apps/dsc/lib/shared/post-card.dart';
+import 'file:///D:/apps/DSC AKGEC//lib/shared/blog_card_template.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -37,13 +37,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin , Autom
                   ),
                 ),
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  height: MediaQuery.of(context).size.height*0.4,
-                  child: Image.asset('assets/club.png'),
-                ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: MediaQuery.of(context).size.height*0.4,
+                child: Image.asset('assets/club.png'),
               ),
               SizedBox(height: 20,),
               Row(

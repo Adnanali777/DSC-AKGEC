@@ -12,7 +12,7 @@ class mynavbar extends StatefulWidget {
 
 class _mynavbarState extends State<mynavbar> {
   int currentindex = 0;
-  List <Widget> children = [
+  List<Widget> children = [
     Home(),
     Events(),
     Projects(),

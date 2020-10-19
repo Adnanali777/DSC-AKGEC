@@ -25,7 +25,7 @@ class _UIState extends State<UI> {
             flexibleSpace: FlexibleSpaceBar(
               background: Padding(
                 padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.05),
-                child: Image.asset('assets/ui-projects.png',fit: BoxFit.cover,),
+                child: Image.asset('assets/ui-projects.png',fit: BoxFit.contain,),
               ),
             ),
           ),

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:lipsum/lipsum.dart' as lipsum;
 import 'package:ripple_effect/ripple_effect.dart';
+import 'package:dsc/events/event details.dart';
 
 class Events extends StatefulWidget {
   @override
@@ -62,9 +63,8 @@ class _EventsState extends State<Events> {
               RippleEffect.start(effectKey, toNextPage);
             },
             backgroundColor: Colors.grey[600],
-            child: IconButton(
-            icon: Icon(Foundation.megaphone,color: Colors.white,),
-          ),),
+            child: Icon(Foundation.megaphone,color: Colors.white,),
+          ),
         ),
       ),
     );
@@ -75,6 +75,8 @@ class _EventsState extends State<Events> {
      ),
    );
 }
+
+
 class Event_template extends StatefulWidget {
   @override
   String image;
@@ -103,7 +105,7 @@ class _Event_templateState extends State<Event_template> with SingleTickerProvid
     );
     animation = Tween(begin: -1.0 , end: 0).animate(CurvedAnimation(
       parent: animationController,
-      curve: Curves.elasticOut,
+      curve: Curves.fastLinearToSlowEaseIn,
     ));
     animationController.forward();
   }
@@ -148,6 +150,7 @@ class _Event_templateState extends State<Event_template> with SingleTickerProvid
                         child: Hero(
                           tag: 'event-img-${widget.image}',
                           child: Container(
+                            margin: EdgeInsets.only(top: 10), 
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
                               image: DecorationImage(image: AssetImage(widget.image),fit: BoxFit.cover),
@@ -186,6 +189,7 @@ class _Event_templateState extends State<Event_template> with SingleTickerProvid
     );
   }
 }
+
 
 
 

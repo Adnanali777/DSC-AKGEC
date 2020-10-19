@@ -22,16 +22,13 @@ class _mlState extends State<ml> {
         physics: ClampingScrollPhysics(),
         slivers: [
           SliverAppBar(
-          expandedHeight: 200,
-          backgroundColor: Colors.white,
-          flexibleSpace: Container(
-            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.015),
-            child: FlexibleSpaceBar(
+            expandedHeight: 200,
+            backgroundColor: Colors.white,
+            flexibleSpace: FlexibleSpaceBar(
              background: Padding(
                padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.03),
-               child: Image.asset('assets/ml-projects.png',fit: BoxFit.cover,height: double.infinity,),
+               child: Image.asset('assets/ml-projects.png',fit: BoxFit.contain,height: double.infinity,),
              ),
-        ),
           ),
         ),
         SliverList(

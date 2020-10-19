@@ -34,6 +34,7 @@ class _EventDetailsState extends State<EventDetails> {
               delegate: SliverChildListDelegate(
                 [
                   Container(
+                    padding: EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
                       color: Colors.white,

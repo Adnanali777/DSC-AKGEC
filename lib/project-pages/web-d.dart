@@ -25,7 +25,7 @@ class _Web_dState extends State<Web_d> {
             flexibleSpace: FlexibleSpaceBar(
               background: Padding(
                 padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.05),
-                child: Image.asset('assets/web-dev-projects.png',fit: BoxFit.cover,),
+                child: Image.asset('assets/web-dev-projects.png',fit: BoxFit.contain,),
               ),
             ),
           ),

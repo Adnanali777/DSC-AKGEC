@@ -117,8 +117,9 @@ class categories_cards extends StatefulWidget {
   _categories_cardsState createState() => _categories_cardsState();
 }
 
-class _categories_cardsState extends State<categories_cards> with SingleTickerProviderStateMixin{
-
+class _categories_cardsState extends State<categories_cards> with SingleTickerProviderStateMixin,AutomaticKeepAliveClientMixin{
+  @override
+  bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     return Container(

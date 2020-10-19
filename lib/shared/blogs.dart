@@ -1,5 +1,5 @@
 import 'package:dsc/shared/heart.dart';
-import 'package:dsc/shared/post-card.dart';
+import 'package:dsc/shared/blog_card_template.dart';
 import 'package:flutter/material.dart';
 import 'package:dsc/screens/home.dart';
 class Details extends StatefulWidget {

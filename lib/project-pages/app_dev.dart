@@ -27,7 +27,7 @@ class _App_devState extends State<App_dev> {
             flexibleSpace: FlexibleSpaceBar(
               background: Padding(
                 padding:  EdgeInsets.only(top:MediaQuery.of(context).size.height*0.05),
-                child: Image.asset('assets/app-dev-projects.png',fit: BoxFit.cover,),
+                child: Image.asset('assets/app-dev-projects.png',fit: BoxFit.contain,),
               ),
             ),
           ),
