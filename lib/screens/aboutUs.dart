@@ -49,23 +49,6 @@ class _AboutState extends State<About> with AutomaticKeepAliveClientMixin{
                 image: DecorationImage(image: AssetImage('assets/aboutus-2.png'),fit: BoxFit.contain),
               ),
             ),
-              Positioned(
-                right: 5,
-                top: 33,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text('Our Team'),
-                    SizedBox(width: 2,),
-                    GestureDetector(
-                      onTap: (){
-                        _controller.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeIn);
-                      },
-                      child:  Icon(AntDesign.right,size: 22,),
-                      ),
-                  ],
-                ),
-              ),
            ]
           ),
           DelayedDisplay(
@@ -100,6 +83,26 @@ class _AboutState extends State<About> with AutomaticKeepAliveClientMixin{
             ),
           ),
         ],
+      ),
+      floatingActionButton: Container(
+        height: MediaQuery.of(context).size.height*0.054,
+        width: MediaQuery.of(context).size.width*0.29,
+        margin: EdgeInsets.symmetric(vertical: 10),
+        child: FloatingActionButton.extended(
+          onPressed: (){
+            _controller.nextPage(duration: Duration(milliseconds: 300), curve: Curves.easeIn);
+          },
+          label: Container(
+            child: Row(
+              children: [
+                Text("Our Team",style: TextStyle(fontSize: 12,letterSpacing: 1.1),),
+                SizedBox(width: 5,),
+                Icon(AntDesign.arrowright,size: 20,),
+              ],
+            ),
+          ),
+
+        ),
       ),
     );
   }

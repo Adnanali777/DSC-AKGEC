@@ -15,7 +15,7 @@ class _ProjectsState extends State<Projects> with AutomaticKeepAliveClientMixin 
 
 
   categories_cards category1 = categories_cards(image: 'assets/project-ml.png',text: 'Machine Learning',route: ml(),);
-  categories_cards category2 = categories_cards(image: 'assets/newwebdev.png',text: 'Web Development',route: Web_d(),);
+  categories_cards category2 = categories_cards(image: 'assets/newwebdev1.png',text: 'Web Development',route: Web_d(),);
   categories_cards category3 = categories_cards(image: 'assets/ui-project.png',text: 'UI Designs',route: UI(),);
   categories_cards category4 = categories_cards(image: 'assets/hjhj.png',text: 'App Development',route: App_dev(),);
   Animation leftTransform1;
@@ -83,7 +83,7 @@ class _ProjectsState extends State<Projects> with AutomaticKeepAliveClientMixin 
                               child: category2),
                         ],
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: MediaQuery.of(context).size.height*0.018,),
                       Row(
                         children: [
                           Transform(

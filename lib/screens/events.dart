@@ -150,7 +150,7 @@ class _Event_templateState extends State<Event_template> with SingleTickerProvid
                         child: Hero(
                           tag: 'event-img-${widget.image}',
                           child: Container(
-                            margin: EdgeInsets.only(top: 10), 
+                            margin: EdgeInsets.only(top: 10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
                               image: DecorationImage(image: AssetImage(widget.image),fit: BoxFit.cover),
