@@ -31,6 +31,11 @@ dependencies:
   delayed_display: ^1.0.3
   flutter_statusbarcolor: ^0.2.3
   lipsum: ^1.0.1
+  firebase_core: ^0.5.1
+  firebase_auth: ^0.18.2
+  google_sign_in: ^4.5.5
+  cloud_firestore: ^0.14.2
+  provider: ^4.3.2+2
   flutter_icons:
     #    path: ../
     git:

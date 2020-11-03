@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "556472602773",
+    "firebase_url": "https://dsc-akgec-f8d5c.firebaseio.com",
+    "project_id": "dsc-akgec-f8d5c",
+    "storage_bucket": "dsc-akgec-f8d5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556472602773:android:af167777051b2b25804b9c",
+        "android_client_info": {
+          "package_name": "com.Adnan.dsc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556472602773-ttvtaj972p0eaudtq51jtag5grg8sv36.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Adnan.dsc",
+            "certificate_hash": "f9d40e1e70e9653b9d77d4744b3a0045b7fd3167"
+          }
+        },
+        {
+          "client_id": "556472602773-s4f34kqc3fn7nstt6boa8pb767a2tjs1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTpPIln3GleKdl9livKUtAUiiHelPIk24"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556472602773-s4f34kqc3fn7nstt6boa8pb767a2tjs1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
