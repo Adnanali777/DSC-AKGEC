@@ -1,6 +1,8 @@
-# dsc
+# DSC AKGEC
 
-A new Flutter application.
+A Flutter application of DSC AKGEC
+
+Follow the link to download apk : https://drive.google.com/file/d/1zcKQI0DwFEDGTvTUwSH3hUNAzBRL3Tjx/view?usp=sharing
 
 ## Getting Started
 
